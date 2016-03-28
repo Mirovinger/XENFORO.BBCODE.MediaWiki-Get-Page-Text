@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="csiXF_bbCode_1D2274F3" title="(CSI/XF/BBCODE) MediaWiki: Get Page Text" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="csiXF_bbCode_1D2274F3" display_order="99999999" debug_only="0"/>
+    <option option_id="csiXF_bbCode_1D2274F3_onoff" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value>0</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_bbCode_1D2274F3" display_order="1"/>
+    </option>
+    <option option_id="csiXF_bbCode_1D2274F3_urlApi" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_bbCode_1D2274F3" display_order="2"/>
+    </option>
+    <option option_id="csiXF_bbCode_1D2274F3_charsLimit" edit_format="spinbox" data_type="string" can_backup="1">
+      <default_value>200</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_bbCode_1D2274F3" display_order="3"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="csiXF_bbCode_1D2274F3_title" version_id="1" version_string="1.0.0"><![CDATA[Название статьи]]></phrase>
+    <phrase title="csiXF_bbCode_1D2274F3_touched" version_id="1" version_string="1.0.0"><![CDATA[Дата обновления]]></phrase>
+    <phrase title="csiXF_bbCode_1D2274F3_readmore" version_id="1" version_string="1.0.0"><![CDATA[Читать всю статью...]]></phrase>
+    <phrase title="custom_bb_code_wiki_text_title" version_id="1" version_string="1.0.0"><![CDATA[MediaWiki: Текст страницы]]></phrase>
+    <phrase title="custom_bb_code_wiki_text_desc" version_id="1" version_string="1.0.0"><![CDATA[Запрос текста страницы из MediaWiki.]]></phrase>
+    <phrase title="option_csiXF_bbCode_1D2274F3_onoff" version_id="1" version_string="1.0.0"><![CDATA[Активировать]]></phrase>
+    <phrase title="option_csiXF_bbCode_1D2274F3_onoff_explain" version_id="1" version_string="1.0.0"><![CDATA[Включение / отключение обработки тега.]]></phrase>
+    <phrase title="option_csiXF_bbCode_1D2274F3_urlApi" version_id="1" version_string="1.0.0"><![CDATA[Путь к API]]></phrase>
+    <phrase title="option_csiXF_bbCode_1D2274F3_urlApi_explain" version_id="1" version_string="1.0.0"><![CDATA[Введите URL по которому доступен "api.php" MediaWiki.
+<br/>Пример: <code>https://en.wikipedia.org/w/api.php</code>]]></phrase>
+    <phrase title="option_csiXF_bbCode_1D2274F3_charsLimit" version_id="1" version_string="1.0.0"><![CDATA[Количество символов]]></phrase>
+    <phrase title="option_csiXF_bbCode_1D2274F3_charsLimit_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите количество символов для отображения текста страницы.]]></phrase>
+    <phrase title="option_group_csiXF_bbCode_1D2274F3" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF/BBCODE) MediaWiki: Текст страницы]]></phrase>
+    <phrase title="option_group_csiXF_bbCode_1D2274F3_description" version_id="1" version_string="1.0.0"><![CDATA[Запрос текста страницы из MediaWiki.
+<br/>Разработано в <a title="Создание стилей и дополнений для XenForo" class="csiXF_crGlobal csiXF_crAdmin csiXF_crOptions Tooltip" href="http://cyberspace.industries/">&quot;CYBERSPACE.Industries&quot;</a>.]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates>
+    <template title="csiXF_bbCode_1D2274F3_tag_wiki_text" version_id="1" version_string="1.0.0"><![CDATA[<xen:require css="csiXF_bbCode_1D2274F3.css" />
+<div class="csiXF_bbCode_1D2274F3 bbCodeWikiText bbCodeBlock bbCodeQuote">
+  <aside>
+    <div class="attribution type">
+      <span title="{xen:phrase csiXF_bbCode_1D2274F3_title}" class="Tooltip">{xen:raw $title}</span>
+      @ <span title="{xen:phrase csiXF_bbCode_1D2274F3_touched}" class="Tooltip">{xen:raw $touched}</span>
+      <a title="{xen:phrase csiXF_bbCode_1D2274F3_readmore}" href="{xen:raw $url}" class="AttributionLink Tooltip" rel="nofollow">&uarr;</a>
+    </div>
+    <blockquote class="quoteContainer"><div class="quote">{xen:raw $extract}</div><div class="quoteExpand">{xen:phrase click_to_expand}</div></blockquote>
+  </aside>
+</div>]]></template>
+    <template title="csiXF_bbCode_1D2274F3.css" version_id="1" version_string="1.0.0"><![CDATA[]]></template>
+  </templates>
+  <public_template_modifications/>
+  <bb_code_media_sites/>
+  <bb_codes>
+    <bb_code bb_code_id="wiki_text" bb_code_mode="callback" has_option="no" callback_class="CSI\BbCodeMediaWikiGetPageText\BbCode\Formatter\Base" callback_method="getBbCodeMediaWikiGetPageText" option_regex="" trim_lines_after="0" plain_children="1" disable_smilies="1" disable_nl2br="1" disable_autolink="1" allow_empty="0" allow_signature="0" editor_icon_url="" sprite_mode="0" sprite_params_x="" sprite_params_y="" active="1">
+      <replace_html><![CDATA[]]></replace_html>
+      <replace_html_email><![CDATA[]]></replace_html_email>
+      <replace_text><![CDATA[]]></replace_text>
+      <example><![CDATA[]]></example>
+    </bb_code>
+  </bb_codes>
+</addon>
